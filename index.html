@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioPass | Biometria Comportamental</title>
+    
+    <link rel="stylesheet" href="style.css?v=3">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+
+<body>
+
+    <section class="clean-interface">
+        
+        <div class="header-minimal">
+            <h2>Inteligência Biométrica</h2>
+            <p>Segurança invisível baseada em comportamento.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="glass-card panel-left">
+                <div class="card-top">
+                    <div class="icon-pulse"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3>Laboratório de Ritmo</h3>
+                </div>
+
+                <div class="input-wrapper">
+                    <label>Área de Treinamento</label>
+                    <input type="text" id="bio-input" class="super-input" placeholder="Digite 'biometria'..." autocomplete="off">
+                </div>
+
+                <div class="slider-wrapper">
+                    <div class="slider-info">
+                        <span>Nível de Rigor (Segurança)</span>
+                        <span id="risk-val" class="highlight-text">35</span>
+                    </div>
+                    <input type="range" id="risk-slider" min="10" max="100" value="35" class="ios-slider">
+                </div>
+
+                <div class="btn-group">
+                    <button id="btn-register" class="btn-clean primary">Gravar Padrão</button>
+                    <button id="btn-verify" class="btn-clean secondary" disabled>Validar</button>
+                    <button id="btn-reset" class="btn-icon"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+
+                <div id="status-msg" class="status-badge">Aguardando digitação...</div>
+
+                <div class="chart-area">
+                    <canvas id="bioChart"></canvas>
+                </div>
+
+                <div id="dna-breakdown" class="dna-area" style="display:none;">
+                    <h4>Análise Detalhada (DNA)</h4>
+                    <div id="dna-bars"></div>
+                </div>
+            </div>
+
+            <div class="phone-container">
+                <div class="iphone-mockup">
+                    <div class="dynamic-island"></div>
+                    <div class="iphone-screen">
+                        
+                        <div class="bank-app-ui">
+                            <div class="app-header">
+                                <i class="fa-solid fa-shield-halved"></i> SecureBank
+                            </div>
+
+                            <div id="step-1" class="app-screen">
+                                <div class="memoji">👋</div>
+                                <h3>Olá, Luisa</h3>
+                                <p>Configure sua chave segura.</p>
+                                <input type="text" id="bank-input-setup" class="ios-input" placeholder="Senha..." autocomplete="off">
+                                <button id="btn-bank-setup" class="ios-btn">Ativar Proteção</button>
+                            </div>
+
+                            <div id="step-2" class="app-screen" style="display: none;">
+                                <div class="memoji">🔒</div>
+                                <h3>Acesso Seguro</h3>
+                                <p>Confirme sua identidade.</p>
+                                <input type="text" id="bank-input-login" class="ios-input" placeholder="Senha" autocomplete="off">
+                                <button id="btn-bank-login" class="ios-btn login">Entrar</button>
+                            </div>
+
+                            <div id="bank-result" class="result-modal" style="display: none;"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="phone-shadow"></div>
+                <button id="btn-start-demo" class="reset-link">Reiniciar Simulação</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
